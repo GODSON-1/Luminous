@@ -94,8 +94,12 @@
                   <a class="nav-link dropdown-toggle" href="#" id="dropdownShop" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Shop</a>
                   <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
+                    
                     <li>
-                      <a href="index.html" class="dropdown-item item-anchor">Shop Sidebar </a>
+                      <a href="{% url "list_product" %}" class="dropdown-item item-anchor">Clothes</a>
+                    </li>
+                    <li>
+                      <a href="{% url "list_product" %}" class="dropdown-item item-anchor">Acessories</a>
                     </li>
                     <li>
                       <a href="{% url "list_product" %}" class="dropdown-item item-anchor">Product </a>
@@ -111,22 +115,16 @@
                     aria-haspopup="true" aria-expanded="false">Pages</a>
                   <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
                     <li>
-                      <a href="index.html" class="dropdown-item item-anchor">About </a>
-                    </li>
-                    <li>
-                      <a href="index.html" class="dropdown-item item-anchor">Cart </a>
+                      <a href="{% url "about" %}" class="dropdown-item item-anchor">About </a>
                     </li>
                     <li>
                       <a href="index.html" class="dropdown-item item-anchor">Checkout </a>
                     </li>
                     <li>
-                      <a href="index.html" class="dropdown-item item-anchor">Coming Soon </a>
-                    </li>
-                    <li>
                       <a href="index.html" class="dropdown-item item-anchor">Contact </a>
                     </li>
                     <li>
-                      <a href="index.html" class="dropdown-item item-anchor">My Account </a>
+                      <a href="{% url "account" %}" class="dropdown-item item-anchor">My Account </a>
                     </li>
                     <li>
                       <a href="index.html" class="dropdown-item item-anchor">Order Tracking </a>
@@ -136,15 +134,20 @@
                     </li>
                   </ul>
                 </li>
-                {% if not hide_blog %} 
+                
+                {% if not hide_blog_and_contact %} 
                  {# Blog link is hidden when hide_blog is True #}
                 <li class="nav-item">
                   <a class="nav-link" href="#blog-id">Blog</a>
                 </li>
                 {% endif %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url "list_product" %}">Contact</a>
+
+                 {# Blog link is hidden when hide_blog is True #}
+                 {% if not show_reg_log %}
+                 <li class="nav-item">
+                  <a class="nav-link" href="{% url "account" %}">Register/Login</a>
                 </li>
+                {% endif %}
               </ul>
             </div>
           </div>

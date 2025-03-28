@@ -387,23 +387,25 @@ th:last-child{
 /* Account page */
 .account-page{
     padding: 50px 0;
-    background: radial-gradient(#fff, #ffd6d6);
+    background: rgb(192, 192, 192);
+
+    
 }
 .form-container{
     background: #fff;
-    width: 300px;
-    height: 400px;
+    width: 500px;
+    height: 600px;
     position: relative;
     text-align: center;
     padding: 20px 0;
     margin: auto;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 0px rgba(97, 89, 89, 0.1);
     overflow: hidden;
 }
 .form-container span{
     font-weight: bold;
     padding: 0 10px;
-    color: #555;
+    color: #0e0c0c;
     cursor: pointer;
     width: 100px;
     display: inline-block;
@@ -434,11 +436,14 @@ form .btn{
 form .btn:focus{
     outline: none;
 }
+
 #LoginForm{
-    left: -300px;
+    width: 400px;
+    height: 500px;
+    padding-left: 250px;
 }
 #RegForm{
-    left: 0;
+    left: 0px;
 }
 form a{
     font-size: 12px;

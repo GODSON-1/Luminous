@@ -1,0 +1,92 @@
+{% load static %}
+<head>
+
+    <style>
+
+        .account-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa; /* Light background */
+        }
+        
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        
+        .form-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6a0dad; /* Purple */
+            margin-bottom: 10px;
+        }
+        
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .register-btn {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(90deg, #6a0dad, #b266ff);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .register-btn:hover {
+            background: linear-gradient(90deg, #4b0082, #8a2be2);
+        }
+        
+        .luminous-login {
+            display: block;
+            margin-top: 10px;
+            color: #008080;
+            text-decoration: none;
+        }
+        
+        .luminous-login:hover {
+            text-decoration: underline;
+            color: #005757;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <img src="{% static 'images/lum-logo.png' %}" alt="Luminous Logo">
+            </div>
+            <div class="col-2">
+                <div class="form-container">
+                    <h2 class="form-title">Create an Account</h2>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password1" placeholder="Password" required>
+                        <input type="password" name="password2" placeholder="Confirm Password" required>
+                        <button type="submit" class="register-btn">Register</button>
+                        <a href="#login.html" class="luminous-login">Already have an account? Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
