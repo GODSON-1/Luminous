@@ -1,140 +1,168 @@
 {% load static %}
 
-
-<footer id="footer" class="mt-5"  >
+<footer id="footer" class="bg-light pt-5">
     <div class="container">
-      <div class="row d-flex flex-wrap justify-content-between py-5">
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-001">
-            <div class="footer-intro mb-4">
-              <a href="index.html">
-                <svg width="180" height="85" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-                  <text x="10" y="70" font-family="Georgia, serif" font-size="50" fill="black">Luminous</text>
-                </svg>
-                
-                
-              </a>
+        <div class="row g-4 py-4">
+            <!-- Brand Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-brand mb-4">
+                    <a href="index.html" class="d-block mb-3">
+                        <svg width="180" height="50" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="70" font-family="Georgia, serif" font-size="50" fill="#222">Luminous</text>
+                        </svg>
+                    </a>
+                    <p class="text-muted mb-4">Elevate your style with timeless elegance and modern craftsmanship. Designed for those who dare to shine.</p>
+                    <div class="social-links">
+                        <ul class="list-inline">
+                            <li class="list-inline-item me-3">
+                                <a href="#" class="text-dark" aria-label="Facebook">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <use xlink:href="#facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a href="#" class="text-dark" aria-label="Twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <use xlink:href="#twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a href="#" class="text-dark" aria-label="Instagram">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-dark" aria-label="Pinterest">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <use xlink:href="#pinterest"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <p>Elevate your style with timeless elegance and modern craftsmanship. Designed for those who dare to shine, Luminous brings you fashion that inspires confidence and sophistication</p>
-            <div class="social-links">
-              <ul class="list-unstyled d-flex flex-wrap gap-3">
-                <li>
-                  <a href="" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#facebook"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#youtube"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#pinterest"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#instagram"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
+
+            <!-- Quick Links Column -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="h6 mb-4 text-uppercase">Quick Links</h5>
+                <ul class="list-unstyled footer-menu">
+                    <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted hover-underline">Home</a></li>
+                    <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted hover-underline">About</a></li>
+                    <li class="mb-2"><a href="blog.html" class="text-decoration-none text-muted hover-underline">Services</a></li>
+                    <li class="mb-2"><a href="styles.html" class="text-decoration-none text-muted hover-underline">Single Item</a></li>
+                    <li><a href="#" class="text-decoration-none text-muted hover-underline">Contact</a></li>
+                </ul>
             </div>
-          </div>
+
+            <!-- Help & Info Column -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="h6 mb-4 text-uppercase">Help & Info</h5>
+                <ul class="list-unstyled footer-menu">
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-underline">Track Your Order</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-underline">Returns + Exchanges</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-underline">Shipping + Delivery</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-underline">Contact Us</a></li>
+                    <li><a href="index.html" class="text-decoration-none text-muted hover-underline">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="h6 mb-4 text-uppercase">Contact Us</h5>
+                <address class="text-muted mb-4">
+                    <p class="mb-2">Do you have any questions or suggestions?</p>
+                    <a href="mailto:luminous@gmail.com" class="d-block mb-3 text-decoration-none hover-underline">luminous@gmail.com</a>
+                    
+                    <p class="mb-2">Do you need support? Give us a call.</p>
+                    <a href="tel:+43720115278" class="text-decoration-none hover-underline">+43 720 11 52 78</a>
+                </address>
+            </div>
         </div>
-        <div class="col-md-3 col-sm-6" >
-          <div class="footer-menu footer-menu-002">
-            <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
-            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-              <li class="menu-item">
-                <a href="index.html" class="item-anchor">Home</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html" class="item-anchor">About</a>
-              </li>
-              <li class="menu-item">
-                <a href="blog.html" class="item-anchor">Services</a>
-              </li>
-              <li class="menu-item">
-                <a href="styles.html" class="item-anchor">Single item</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Contact</a>
-              </li>
-            </ul>
-          </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-top py-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <span class="me-3 text-muted small">We ship with:</span>
+                        <img src="{% static 'images/arct-icon.png' %}" alt="Shipping carrier" class="img-fluid me-3" style="height: 24px;">
+                        <img src="{% static 'images/dhl-logo.png' %}" alt="DHL" class="img-fluid" style="height: 24px;">
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex flex-wrap align-items-center justify-content-md-end">
+                        <span class="me-3 text-muted small">Payment Options:</span>
+                        <img src="{% static 'images/visa-card.png' %}" alt="Visa" class="img-fluid me-2" style="height: 20px;">
+                        <img src="{% static 'images/paypal-card.png' %}" alt="PayPal" class="img-fluid me-2" style="height: 20px;">
+                        <img src="{% static 'images/master-card.png' %}" alt="Mastercard" class="img-fluid" style="height: 20px;">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-003">
-            <h5 class="widget-title text-uppercase mb-4">Help & Info</h5>
-            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Track Your Order</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Returns + Exchanges</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Shipping + Delivery</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Contact Us</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Find us easy</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html" class="item-anchor">Faqs</a>
-              </li>
-            </ul>
-          </div>
+
+        <!-- Copyright -->
+        <div class="py-3 text-center text-muted small">
+            <p class="mb-0">&copy; {% now "Y" %} Luminous. All rights reserved.</p>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-004 border-animation-left">
-            <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
-            <p>Do you have any questions or suggestions? <br><a href="mailto:contact@yourcompany.com"
-                class="item-anchor">lumious@gmail.com</a></p>
-            <p>Do you need support? Give us a call. <a href="tel:+43 720 11 52 78" class="item-anchor">+43 720 11 52
-                78</a>
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="border-top py-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 d-flex flex-wrap">
-            <div class="shipping">
-              <span>We ship with:</span>
-              <img src="{% static 'images/arct-icon.png' %}" alt="icon">
-              <img src="{% static 'images/dhl-logo.png' %}" alt="icon">
-            </div>
-            <div class="payment-option">
-          
-              <span>Payment Option:</span>
-              <img src="{% static 'images/visa-card.png' %}" alt="card">
-              <img src="{% static 'images/paypal-card.png' %}" alt="card">
-              <img src="{% static 'images/master-card.png' %}" alt="card">
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </footer>
+</footer>
+
+<style>
+    #footer {
+        font-size: 0.9rem;
+    }
+    
+    /* Underline Animation */
+    .hover-underline {
+        display: inline-block;
+        position: relative;
+        color: #6c757d;
+    }
+    
+    .hover-underline::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transition: width 0.3s ease;
+    }
+    
+    .hover-underline:hover {
+        color: #000 !important;
+        text-decoration: none;
+    }
+    
+    .hover-underline:hover::after {
+        width: 100%;
+    }
+    
+    /* Other Styles */
+    .social-links a {
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+    
+    .social-links a:hover {
+        opacity: 1;
+    }
+    
+    .footer-brand svg text {
+        fill: #222;
+    }
+    
+    .footer-menu li {
+        padding: 0.25rem 0;
+    }
+    
+    address a {
+        color: #6c757d !important;
+    }
+</style>

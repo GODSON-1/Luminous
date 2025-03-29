@@ -1,0 +1,182 @@
+{% extends 'blank_layout.html' %}
+{% load static %}
+<head>
+    * Blog Page Styles */
+.blog .post-item {
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.blog .post-item:hover {
+    transform: translateY(-5px);
+}
+
+.blog .post-grid-image {
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.blog .post-item:hover .post-grid-image {
+    transform: scale(1.02);
+}
+
+.blog .post-title {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.blog .post-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog .post-title a:hover {
+    color: #4a90e2;
+}
+
+.blog .post-content p {
+    color: #666;
+    margin-top: 10px;
+}
+</head>
+{% block content %}
+
+<section class="blog py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-5">
+            <h1 class="text-uppercase">Fashion Blog</h1>
+            <a href="{% url "home" %}" class="btn-link">← Back to Home</a>
+        </div>
+
+        <div class="row">
+            <!-- Blog Post 1 -->
+            <div class="col-md-4 mb-4">
+                <article class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img src="{% static 'images/post-image1.jpg' %}" alt="Sustainable fashion trends" class="post-grid-image img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-content d-flex flex-wrap gap-2 my-3">
+                        <div class="post-meta text-uppercase fs-6 text-secondary">
+                            <span class="post-category">Eco Fashion /</span>
+                            <span class="meta-day">May 15, 2023</span>
+                        </div>
+                        <h4 class="post-title text-uppercase">
+                            <a href="#">Sustainable Style Revolution</a>
+                        </h4>
+                        <p>Discover how eco-friendly materials and ethical production are transforming the fashion industry...</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="col-md-4 mb-4">
+                <article class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img src="{% static 'images/post-image2.jpg' %}" alt="Minimalist wardrobe" class="post-grid-image img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-content d-flex flex-wrap gap-2 my-3">
+                        <div class="post-meta text-uppercase fs-6 text-secondary">
+                            <span class="post-category">Wardrobe /</span>
+                            <span class="meta-day">Jun 2, 2023</span>
+                        </div>
+                        <h4 class="post-title text-uppercase">
+                            <a href="#">Capsule Wardrobe Essentials</a>
+                        </h4>
+                        <p>Learn how to build a minimalist wardrobe with versatile pieces for any occasion...</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="col-md-4 mb-4">
+                <article class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img src="{% static 'images/post-image3.jpg' %}" alt="Streetwear trends" class="post-grid-image img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-content d-flex flex-wrap gap-2 my-3">
+                        <div class="post-meta text-uppercase fs-6 text-secondary">
+                            <span class="post-category">Streetwear /</span>
+                            <span class="meta-day">Jun 18, 2023</span>
+                        </div>
+                        <h4 class="post-title text-uppercase">
+                            <a href="#">Urban Streetwear Evolution</a>
+                        </h4>
+                        <p>Explore how streetwear has moved from subculture to mainstream fashion...</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="col-md-4 mb-4">
+                <article class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img src="{% static 'images/post-image4.jpg' %}" alt="Summer fashion" class="post-grid-image img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-content d-flex flex-wrap gap-2 my-3">
+                        <div class="post-meta text-uppercase fs-6 text-secondary">
+                            <span class="post-category">Seasonal /</span>
+                            <span class="meta-day">Jul 5, 2023</span>
+                        </div>
+                        <h4 class="post-title text-uppercase">
+                            <a href="#">Summer 2023 Must-Haves</a>
+                        </h4>
+                        <p>The essential pieces you need for this summer's hottest trends and comfortable style...</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 5 -->
+            <div class="col-md-4 mb-4">
+                <article class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img src="{% static 'images\post-image7.jpg' %}" alt="Accessories trends" class="post-grid-image img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-content d-flex flex-wrap gap-2 my-3">
+                        <div class="post-meta text-uppercase fs-6 text-secondary">
+                            <span class="post-category">Eco Fashion  /</span>
+                            <span class="meta-day">Aug 12, 2023</span>
+                        </div>
+                        <h4 class="post-title text-uppercase">
+                            <a href="#">Statement Accessories Guide</a>
+                        </h4>
+                        <p>How to elevate any outfit with bold accessories that make a personal style statement...</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 6 -->
+            <div class="col-md-4 mb-4">
+                <article class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img src="{% static 'images/post-image6.jpg' %}" alt="Fall fashion" class="post-grid-image img-fluid">
+                        </a>
+                    </div>
+                    <div class="post-content d-flex flex-wrap gap-2 my-3">
+                        <div class="post-meta text-uppercase fs-6 text-secondary">
+                            <span class="post-category">Seasonal /</span>
+                            <span class="meta-day">Sep 8, 2023</span>
+                        </div>
+                        <h4 class="post-title text-uppercase">
+                            <a href="#">Fall Transition Outfits</a>
+                        </h4>
+                        <p>Stylish ways to transition your wardrobe from summer to fall with layering techniques...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

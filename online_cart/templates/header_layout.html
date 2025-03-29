@@ -96,13 +96,16 @@
                   <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownShop">
                     
                     <li>
-                      <a href="{% url "list_product" %}" class="dropdown-item item-anchor">Clothes</a>
+                      <a href="{% url "list_product" %}" class="dropdown-item item-anchor">All products</a>
                     </li>
                     <li>
-                      <a href="{% url "list_product" %}" class="dropdown-item item-anchor">Acessories</a>
+                      <a href="{% url "mens_products" %}" class="dropdown-item item-anchor">Men's Collection</a>
                     </li>
                     <li>
-                      <a href="{% url "list_product" %}" class="dropdown-item item-anchor">Product </a>
+                      <a href="{% url "womens_products" %}" class="dropdown-item item-anchor">Women's Collection</a>
+                    </li>
+                    <li>
+                      <a href="{% url "accessories_products" %}" class="dropdown-item item-anchor">Acessories</a>
                     </li>
                 
                   </ul>

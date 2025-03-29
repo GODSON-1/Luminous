@@ -1,25 +1,67 @@
 {% load static %}
-<section class="collection bg-light position-relative py-5">
+<section class="luxury-collection position-relative py-6" style="background-color: #f8f5f2;">
     <div class="container">
-      <div class="row">
-        <div class="title-xlarge text-uppercase txt-fx domino">Collection</div>
-        <div class="collection-item d-flex flex-wrap my-5">
-          <div class="col-md-6 column-container">
-            <div class="image-holder">
-              <img src="{% static 'images/single-image-2.jpg' %}" alt="collection" class="product-image img-fluid">
+        <div class="row">
+            <div class="title-xlarge text-uppercase txt-fx domino mb-4" style="letter-spacing: 2px;">The Winter Edit</div>
+            <div class="collection-item d-flex flex-wrap my-4">
+                <div class="col-md-6 column-container p-0">
+                    <div class="image-holder h-100 overflow-hidden">
+                        <img src="{% static 'images/single-image-2.jpg' %}" alt="Luxury Winter Collection" 
+                             class="product-image img-fluid w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-md-6 column-container bg-white d-flex align-items-center">
+                    <div class="collection-content p-4 p-lg-6">
+                        <h3 class="element-title text-uppercase mb-4" style="font-family: 'Playfair Display', serif; letter-spacing: 1px;">ELEGANCE REDEFINED</h3>
+                        <p class="mb-4" style="line-height: 1.8; color: #555;">
+                            Our Winter Collection embodies refined sophistication with premium fabrics that drape effortlessly. 
+                            Each piece is meticulously crafted for the discerning individual who appreciates timeless design 
+                            meeting contemporary comfort. From cashmere knits to tailored outerwear, discover garments that 
+                            transcend seasons with their enduring appeal and exceptional craftsmanship.
+                        </p>
+                        <a href="{% url 'list_product' %}" 
+                           class="btn btn-luxury text-uppercase mt-2 px-4 py-3" 
+                           style="letter-spacing: 2px; border: 2px solid #000;">
+                            EXPLORE THE COLLECTION
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6 column-container bg-white">
-            <div class="collection-content p-5 m-0 m-md-5">
-              <h3 class="element-title text-uppercase">Classic winter collection</h3>
-              <p>Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla a. Ac sed eu
-                fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit libero. Ultricies quam
-                nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id in. Pulvinar commodo mollis
-                diam sed facilisis at cursus imperdiet cursus ac faucibus sit faucibus sit libero.</p>
-              <a href="{% url "list_product" %}" class="btn btn-dark text-uppercase mt-3">Shop Collection</a>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
+
+<style>
+    .luxury-collection {
+        background: #f8f5f2;
+    }
+    .btn-luxury {
+        background-color: #000;
+        color: #fff;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .btn-luxury:hover {
+        background-color: transparent;
+        color: #000;
+    }
+    .product-image {
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .image-holder:hover .product-image {
+        transform: scale(1.03);
+    }
+    .collection-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    @media (max-width: 767px) {
+        .column-container {
+            padding: 0 !important;
+        }
+        .collection-content {
+            padding: 2rem !important;
+            max-width: 100%;
+        }
+    }
+</style>

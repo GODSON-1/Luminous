@@ -1,44 +1,82 @@
 {% load static %}
 
-<section class="features py-5">
+<section class="features py-5" style="background-color: #f8f5f2;">
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
-          <div class="py-5">
-            <svg width="38" height="38" viewBox="0 0 24 24">
-              <use xlink:href="#calendar"></use>
-            </svg>
-            <h4 class="element-title text-capitalize my-3">Book An Appointment</h4>
-            <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+      <div class="row g-4">
+        <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="0">
+          <div class="p-4 feature-card h-100">
+            <div class="icon-wrapper mb-4">
+              <svg width="42" height="42" viewBox="0 0 24 24" class="text-primary">
+                <use xlink:href="#calendar"></use>
+              </svg>
+            </div>
+            <h4 class="element-title text-capitalize mb-3">Exclusive VIP Appointments</h4>
+            <p class="mb-0">Schedule a private shopping experience with our style consultants for personalized attention.</p>
+            <a href="#" class="btn btn-link mt-3 text-decoration-none">Book Now →</a>
           </div>
         </div>
-        <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="300">
-          <div class="py-5">
-            <svg width="38" height="38" viewBox="0 0 24 24">
-              <use xlink:href="#shopping-bag"></use>
-            </svg>
-            <h4 class="element-title text-capitalize my-3">Pick up in store</h4>
-            <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+        
+        <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="150">
+          <div class="p-4 feature-card h-100">
+            <div class="icon-wrapper mb-4">
+              <svg width="42" height="42" viewBox="0 0 24 24" class="text-primary">
+                <use xlink:href="#shopping-bag"></use>
+              </svg>
+            </div>
+            <h4 class="element-title text-capitalize mb-3">Instant Store Collection</h4>
+            <p class="mb-0">Order by 2PM and pick up your items the same day at your nearest boutique.</p>
+            <a href="#" class="btn btn-link mt-3 text-decoration-none">Find Stores →</a>
           </div>
         </div>
-        <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="600">
-          <div class="py-5">
-            <svg width="38" height="38" viewBox="0 0 24 24">
-              <use xlink:href="#gift"></use>
-            </svg>
-            <h4 class="element-title text-capitalize my-3">Special packaging</h4>
-            <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+        
+        <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-4 feature-card h-100">
+            <div class="icon-wrapper mb-4">
+              <svg width="42" height="42" viewBox="0 0 24 24" class="text-primary">
+                <use xlink:href="#gift"></use>
+              </svg>
+            </div>
+            <h4 class="element-title text-capitalize mb-3">Signature Gift Service</h4>
+            <p class="mb-0">Our luxury packaging includes hand-tied ribbons and personalized gift messages.</p>
+            <a href="#" class="btn btn-link mt-3 text-decoration-none">Gift Options →</a>
           </div>
         </div>
-        <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="900">
-          <div class="py-5">
-            <svg width="38" height="38" viewBox="0 0 24 24">
-              <use xlink:href="#arrow-cycle"></use>
-            </svg>
-            <h4 class="element-title text-capitalize my-3">free global returns</h4>
-            <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+        
+        <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="450">
+          <div class="p-4 feature-card h-100">
+            <div class="icon-wrapper mb-4">
+              <svg width="42" height="42" viewBox="0 0 24 24" class="text-primary">
+                <use xlink:href="#arrow-cycle"></use>
+              </svg>
+            </div>
+            <h4 class="element-title text-capitalize mb-3">Easy Global Returns</h4>
+            <p class="mb-0">Change your mind? We offer free returns worldwide within 28 days.</p>
+            <a href="#" class="btn btn-link mt-3 text-decoration-none">Return Policy →</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
+
+<style>
+  .feature-card {
+    background:#f8f5f2 ;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+  .icon-wrapper {
+    background: rgba(0, 0, 0, 0.1);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

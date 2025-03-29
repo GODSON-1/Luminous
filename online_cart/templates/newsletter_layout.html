@@ -2,68 +2,120 @@
 
 
 
-<section class="newsletter bg-light" style="background: url('{% static 'images/pattern-bg.png' %} ') no-repeat;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 py-5 my-5">
-          <div class="subscribe-header text-center pb-3">
-            <h3 class="section-title text-uppercase">Sign Up for our newsletter</h3>
-          </div>
-          <form id="form" class="d-flex flex-wrap gap-2">
-            <input type="text" name="email" placeholder="Your Email Addresss" class="form-control form-control-lg">
-            <button class="btn btn-dark btn-lg text-uppercase w-100">Sign Up</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="instagram position-relative">
-    <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">
-      <a href="https://www.instagram.com/templatesjungle/" class="btn btn-dark px-5">Follow us on Instagram</a>
-    </div>
+<!-- Redesigned Instagram Section -->
+<section class="instagram-gallery py-0">
+  <div class="container-fluid px-0">
     <div class="row g-0">
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="{% static 'images/insta-item1.jpg' %}" alt="instagram" class="insta-image img-fluid">
+      {% for i in "123456" %}
+      <div class="col-6 col-md-4 col-lg-2 insta-col">
+        <div class="insta-item position-relative overflow-hidden">
+          <img src="{% static 'images/insta-item'|add:i|add:'.jpg' %}" 
+               alt="Instagram post {{i}}" 
+               class="insta-image w-100 h-100">
+          <a href="https://www.instagram.com/" 
+             class="insta-overlay d-flex align-items-center justify-content-center"
+             target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white">
+              <use xlink:href="#instagram"></use>
+            </svg>
           </a>
         </div>
       </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="{% static 'images/insta-item2.jpg' %}" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="{% static 'images/insta-item3.jpg' %}" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="{% static 'images/insta-item4.jpg' %}" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="{% static 'images/insta-item5.jpg' %}" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <div class="insta-item">
-          <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="{% static 'images/insta-item6.jpg' %}" alt="instagram" class="insta-image img-fluid">
-          </a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-  </section>
+    <div class="text-center py-4">
+      <a href="https://www.instagram.com/templatesjungle/" 
+         class="btn btn-outline-dark px-5 py-2 insta-follow-btn"
+         target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" class="me-2" fill="none" stroke="currentColor">
+          <use xlink:href="#instagram"></use>
+        </svg>
+        Follow Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Newsletter Styles */
+  .newsletter {
+    background-color: #f8f9fa;
+    position: relative;
+  }
+  
+  .newsletter-form input {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 0.9rem;
+    min-width: 250px;
+  }
+  
+  .newsletter-form input:focus {
+    box-shadow: none;
+    border-color: #000;
+  }
+  
+  .newsletter-form button {
+    border-radius: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background: #000;
+  }
+  
+  /* Instagram Gallery Styles */
+  .insta-item {
+    aspect-ratio: 1/1;
+  }
+  
+  .insta-image {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .insta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .insta-item:hover .insta-image {
+    transform: scale(1.05);
+  }
+  
+  .insta-item:hover .insta-overlay {
+    opacity: 1;
+  }
+  
+  .insta-follow-btn {
+    border-width: 2px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+  }
+  
+  .insta-follow-btn:hover {
+    background: #000;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .newsletter-form {
+      flex-direction: column;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+      width: 100%;
+    }
+  }
+</style>

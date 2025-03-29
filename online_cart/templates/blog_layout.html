@@ -1,69 +1,70 @@
 {% load static %}
+{% load static %}
 
 <section class="blog py-5" id="blog-id">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-        <h4 class="text-uppercase">Read Blog Posts</h4>
-        <a href="index.html" class="btn-link">View All</a>
+        <h4 class="text-uppercase">Fashion Insights</h4>
+        <a href="{% url 'blog_page' %}" class="btn-link">Explore All Articles</a>
       </div>
       <div class="row">
         <div class="col-md-4">
           <article class="post-item">
             <div class="post-image">
               <a href="#blog-id">
-                <img src="{% static 'images/post-image1.jpg' %}" alt="image" class="post-grid-image img-fluid">
+                <img src="{% static 'images/post-image1.jpg' %}" alt="Sustainable fashion trends" class="post-grid-image img-fluid">
               </a>
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
               <div class="post-meta text-uppercase fs-6 text-secondary">
-                <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
+                <span class="post-category">Eco Fashion /</span>
+                <span class="meta-day"> May 15, 2023</span>
               </div>
               <h5 class="post-title text-uppercase">
-                <a href="index.html">How to look outstanding in pastel</a>
+                <a href="">Sustainable Style Revolution</a>
               </h5>
-              <p>Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...</p>
+              <p>Discover how eco-friendly materials and ethical production are transforming the fashion industry while reducing environmental impact...</p>
             </div>
           </article>
         </div>
         <div class="col-md-4">
           <article class="post-item">
             <div class="post-image">
-              <a href="index.html">
-                <img src="{% static 'images/post-image2.jpg' %}" alt="image" class="post-grid-image img-fluid">
+              <a href="">
+                <img src="{% static 'images/post-image2.jpg' %}" alt="Minimalist wardrobe essentials" class="post-grid-image img-fluid">
               </a>
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
               <div class="post-meta text-uppercase fs-6 text-secondary">
-                <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
+                <span class="post-category">Wardrobe /</span>
+                <span class="meta-day"> Jun 2, 2023</span>
               </div>
               <h5 class="post-title text-uppercase">
-                <a href="index.html">Top 10 fashion trend for summer</a>
+                <a href="">Capsule Wardrobe Essentials</a>
               </h5>
-              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+              <p>Learn how to build a minimalist wardrobe with 30 versatile pieces that can create over 50 stylish outfits for any occasion...</p>
             </div>
           </article>
         </div>
         <div class="col-md-4">
           <article class="post-item">
             <div class="post-image">
-              <a href="index.html">
-                <img src="{% static 'images/post-image3.jpg' %}" alt="image" class="post-grid-image img-fluid">
+              <a href="">
+                <img src="{% static 'images/post-image3.jpg' %}" alt="Streetwear fashion trends" class="post-grid-image img-fluid">
               </a>
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
               <div class="post-meta text-uppercase fs-6 text-secondary">
-                <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
+                <span class="post-category">Streetwear /</span>
+                <span class="meta-day"> Jun 18, 2023</span>
               </div>
               <h5 class="post-title text-uppercase">
-                <a href="index.html">Crazy fashion with unique moment</a>
+                <a href="">Urban Streetwear Evolution</a>
               </h5>
-              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+              <p>Explore how streetwear has moved from subculture to mainstream fashion, influencing luxury brands and redefining modern style...</p>
             </div>
           </article>
         </div>
       </div>
     </div>
-  </section>
+</section>
