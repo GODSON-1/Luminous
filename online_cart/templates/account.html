@@ -16,24 +16,33 @@
                     </div>
 
                     <!-- ✅ Login Form -->
-                    <form id="login-form" method="POST" action="">
+                    <form id="login-form" method="POST"  enctype="multipart/form-data" action="">
                         {% csrf_token %}
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <button type="submit" class="btn">Login</button>
+                        <input type="text" minlength='5' name="username" placeholder="Username" required>
+                        <input type="password" minlength='5' name="password" placeholder="Password" required>
+                        <button type="submit" name='login' class="btn">Login</button>
                         <a href="#" class="forgot-password">Forgot Password?</a>
                         <p class="switch-link">Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
                     </form>
 
                     <!-- ✅ Register Form -->
-                    <form id="register-form" method="POST" action="" style="display: none;">
+                    <form id="register-form" method="POST" action="" enctype="multipart/form-data" >
                         {% csrf_token %}
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username" maxlength='10' minlength='5' placeholder="Username" required>
                         <input type="email" name="email" placeholder="Email" required>
-                        <input type="password" name="password1" placeholder="Password" required>
-                        <input type="password" name="password2" placeholder="Confirm Password" required>
-                        <button type="submit" class="btn register-btn">Register</button>
+                        <input type="tel" name="phone" minlength='10' maxlength='10' placeholder="Phone no" required>
+                        <input type="text" name="address" minlength='5' placeholder="Address" required>
+                        <input type="password" minlength='5' name="password" placeholder="Password" required>
+                        <button type="submit" name="register" class="btn register-btn">Register</button>
                         <p class="switch-link">Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+                        {% if messages %}
+                        <p> 
+                            {% for message in messages%}
+                            <p>{{message}}</p>
+                            {%endfor %}
+                        {% endif %}
+                        </p>
+
                     </form>
                 </div>
             </div>
@@ -89,7 +98,9 @@
     display: flex;
     justify-content: center;
 }
-
+#register-form{
+    display: none;
+}
 .account-page .form-container {
     width: 100%;
     max-width: 400px;
