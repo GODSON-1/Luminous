@@ -23,10 +23,13 @@
             <p>Home / T-Shirt</p>
             <h1>{{product.title}}</h1>
             <h4>${{product.price}}</h4>
-            <div class="product-actions">
+            <form method="post" action="{% url 'orders:add_to_cart' %}">
+                {% csrf_token %}
+            <input type="hidden" value="{{product.id}}" name="product_id">
+                <div class="product-actions">
                 <!-- Size Selector -->
                 <div class="select-wrapper">
-                    <select class="size-select">
+                    <select class="size-select" name="size" >
                         <option value="">Select Size</option>
                         <option value="XXL">XXL</option>
                         <option value="XL">XL</option>
@@ -40,16 +43,21 @@
                 <!-- Quantity Selector -->
               <div class="quantity-selector">
         <button class="quantity-btn minus">-</button>
-        <input type="number" value="1" min="1" max="10" class="quantity-input">
+        <input type="number" value="1" min="1" max="10" class="quantity-input" name="quantity">
         <button class="quantity-btn plus">+</button>
     </div>
                 
                 <!-- Add to Cart Link (styled as button) -->
-                <a href="#" class="add-to-cart-link" id="addToCartLink">
+                 <button type="submit"  class="add-to-cart-link"id="addToCartLink">
+                <a href="#" >
                     <span class="btn-icon">🛒</span>
                     Add to Cart
                 </a>
+            </button>
+            
+            
             </div>
+        </form>
             <h3>Product Details </h3>
             <br>
             <p>{{product.description}}</p>
