@@ -42,21 +42,36 @@
         color: white;
         border-color: #333;
     }
+    .btn-link {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .btn-link:hover {
+      background-color: #f8f9fa;
+      border-color: #ccc;
+    }
   </style>
 </head>
 <body>
 <div class="small-container">
    
-
-    <div class="row row-2">
-        <h2 class="text-uppercase">
-            {% if current_collection == 'men' %}Men's Collection
-            {% elif current_collection == 'women' %}Women's Collection
-            {% elif current_collection == 'accessories' %}Accessories
-            {% else %}All Products{% endif %}
+    <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-5">
+      <div class="d-flex align-items-center w-100">
+        <h2 class="text-uppercase mb-0 flex-grow-1">
+          {% if current_collection == 'men' %}Men's Collection
+          {% elif current_collection == 'women' %}Women's Collection
+          {% elif current_collection == 'accessories' %}Accessories
+          {% else %}All Products{% endif %}
         </h2>
+        <a href="{% url 'home' %}" class="btn-link ms-auto">← Back to Home</a>
+      </div>
     </div>
-
     <!-- Loop through product chunks -->
     {% for product_chunk in products|chunks:4 %}
     <div class="row">
@@ -77,6 +92,7 @@
                       <h5 class="text-uppercase fs-5 mt-3">
                         <a href="{% url 'detail_product' product.id %}">{{ product.title }}</a>
                       </h5>
+                      
                       <a href="#" class="text-decoration-none" data-after="Add to cart">
                         <span>${{ product.price }}</span>
                       </a>

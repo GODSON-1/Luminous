@@ -120,6 +120,7 @@
                     <li>
                       <a href="{% url "about" %}" class="dropdown-item item-anchor">About </a>
                     </li>
+                    {% if  user.is_autthenticated %}
                     <li>
                       <a href="index.html" class="dropdown-item item-anchor">Checkout </a>
                     </li>
@@ -136,6 +137,7 @@
                       <a href="index.html" class="dropdown-item item-anchor">Wishlist </a>
                     </li>
                   </ul>
+                  {% endif%}
                 </li>
                 
                 {% if not hide_blog_and_contact %} 
@@ -151,6 +153,11 @@
                   <a class="nav-link" href="{% url "account" %}">Register/Login</a>
                 </li>
                 {% endif %}
+                {% if  user.is_autthenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url "account" %}">Logout</a>
+                </li>
+                {% endif%}
               </ul>
             </div>
           </div>

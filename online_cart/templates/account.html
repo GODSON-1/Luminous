@@ -23,6 +23,15 @@
                         <button type="submit" name='login' class="btn">Login</button>
                         <a href="#" class="forgot-password">Forgot Password?</a>
                         <p class="switch-link">Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
+                        {% if messages %}
+                            <div class="messages-container">
+                                {% for message in messages %}
+                                    <div class="{{ message.tags }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %} 
                     </form>
 
                     <!-- ✅ Register Form -->
@@ -36,13 +45,14 @@
                         <button type="submit" name="register" class="btn register-btn">Register</button>
                         <p class="switch-link">Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
                         {% if messages %}
-                        <p> 
-                            {% for message in messages%}
-                            <p>{{message}}</p>
-                            {%endfor %}
-                        {% endif %}
-                        </p>
-
+                            <div class="messages-container">
+                                {% for message in messages %}
+                                    <div class="{{ message.tags }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %} 
                     </form>
                 </div>
             </div>
@@ -192,6 +202,39 @@ input {
 .switch-link a:hover {
     text-decoration: underline;
 }
+.messages-container {
+    margin: 1rem 0;
+}
+
+.messages-container {
+    margin: 1rem 0;
+}
+
+.success, .error {
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 </style>
 
 <script>
@@ -209,5 +252,14 @@ function toggleForm(formType) {
     }
 }
 </script>
+{% if register %}
+<script>
+    toggleForm('register')
+</script>
+{% else %}
+<script>
+    toggleForm('login')
+</script>
+{% endif %}
 
 {% endblock content %}
