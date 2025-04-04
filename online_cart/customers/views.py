@@ -22,6 +22,7 @@ def show_account(request):
             password=request.POST.get('password')  
             #create user account    
             user=User.objects.create_user( 
+                name=username,
                 username=username,
                 password=password,
                 email=email

@@ -1,7 +1,32 @@
-from django.shortcuts import render,redirect # noqa: F401
-from .models import Order,OrderedItem # noqa: F401
-from products.models import Product # noqa: F401
+from django.shortcuts import render,redirect
+from .models import Order,OrderedItem
+from django.contrib import messages # noqa: F401
+from products.models import Product 
 # Create your views here.
+def checkout_cart(request):
+        if request.POST:
+            try:
+                user=request.user
+                customer=user.customer_profile # noqa: F841
+                total=float(request.POST.get('total'))  # noqa: F841
+                order_obj=Order.objects.get(# noqa: F841
+                    owner=customer,
+                    order_status=Order.CART_STAGE
+                    
+                )
+                if order_obj:
+                    order_obj.order_status=Order.ORDER_CONFORMED
+                    order_obj.save()
+                    status_message="Your order is processed . your item will be delivered with in two day "  # noqa: F841
+                    messages.success(request,status_message)
+                else:
+                    status_message="Unable to process.No items in cart "  # noqa: F841
+                    messages.error(request,status_message)
+            except Exception as e:  # noqa: F841
+                status_message="Unable to process.No items in cart "  # noqa: F841
+                messages.error(request,status_message)       
+    
+        return redirect('orders:cart')
 def add_to_cart(request):
     if request.POST:
         user=request.user
@@ -27,6 +52,7 @@ def add_to_cart(request):
             ordered_item.save()
             
     return redirect('orders:cart')
+
 
 def show_cart(request):
     user=request.user

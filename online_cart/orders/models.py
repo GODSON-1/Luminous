@@ -24,6 +24,9 @@ class Order(models.Model):
     delete_status=models.IntegerField(choices=DELETE_CHOICE,default=LIVE)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return "{}(order:{})".format(self.owner.user.username,self.id,)  # noqa: F524
+    
     
 class OrderedItem(models.Model):
     product=models.ForeignKey(Product,related_name="added_cart",on_delete=models.SET_NULL,null=True)
