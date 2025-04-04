@@ -11,7 +11,7 @@ def signout(request):
 
 def show_account(request):
     context={'hide_blog_and_contact':True,
-             'show_reg_log':False,}  # noqa: F841
+             'show_reg_log':True,}  # noqa: F841
     if request.POST and 'register' in  request.POST:
         context['register']=True
         try:

@@ -79,33 +79,37 @@
                     <li>
                       <a href="{% url "about" %}" class="dropdown-item item-anchor">About </a>
                     </li>
-                    {% if  user.is_autthenticated %}
+                    {% if  user.is_authenticated %}
+                    
                     <li>
                       <a href="{% url "orders:cart" %}" class="dropdown-item item-anchor">Cart</a>
                     </li>
                     <li>
                       <a href="{% url "account" %}" class="dropdown-item item-anchor">My Account </a>
                     </li>
+                    <li>
+                      <a href="{% url "orders:orders" %}" class="dropdown-item item-anchor">Orders </a>
+                    </li>
                   </ul>
                   {% endif%}
                 </li>
-                
                 {% if not hide_blog_and_contact %} 
                  {# Blog link is hidden when hide_blog is True #}
                 <li class="nav-item">
                   <a class="nav-link" href="#blog-id">Blog</a>
                 </li>
+              
                 {% endif %}
 
                  {# Blog link is hidden when hide_blog is True #}
-                 {% if not show_reg_log %}
+                 {% if not user.is_authenticated  %}
                  <li class="nav-item">
                   <a class="nav-link" href="{% url "account" %}">Register/Login</a>
                 </li>
                 {% endif %}
-                {% if  user.is_autthenticated %}
+                {% if   user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url "account" %}">Logout</a>
+                  <a class="nav-link" href="{% url "logout" %}">Logout</a>
                 </li>
                 {% endif%}
               </ul>
@@ -113,7 +117,19 @@
           </div>
         </div>
 
-        
+        <div class="col-3 col-lg-auto">
+          <ul class="list-unstyled d-flex m-0">
+            <li class="d-none d-lg-block">
+              <a href="#" class="text-uppercase mx-3">Wishlist <span class="wishlist-count">(0)</span>
+              </a>
+            </li>
+            <li class="d-none d-lg-block">
+              <a href="{% url "orders:cart" %}" class="text-uppercase mx-3" >Cart
+              </a>
+            </li>
+            
+          </ul>
+        </div>
 
       </div>
 

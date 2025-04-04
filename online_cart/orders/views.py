@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Order,OrderedItem
 from django.contrib import messages # noqa: F401
 from products.models import Product 
+from django.contrib.auth.decorators import login_required # noqa: F401
 # Create your views here.
 def checkout_cart(request):
         if request.POST:
@@ -27,12 +28,42 @@ def checkout_cart(request):
                 messages.error(request,status_message)       
     
         return redirect('orders:cart')
+    
+
+
+def show_cart(request):
+    user=request.user
+    customer=user.customer_profile  # noqa: F841
+    cart_obj,created=Order.objects.get_or_create(
+        owner=customer,
+        order_status=Order.CART_STAGE
+    )
+    context={'cart':cart_obj}  # noqa: F841
+    return render(request,'cart.html',context)
+
+def remove_item_from_cart(request,pk):
+    item=OrderedItem.objects.get(pk=pk)  # noqa: F841
+    if item:
+        item.delete()
+    return redirect('orders:cart')
+
+
+@login_required(login_url='account')
+def show_orders(request):
+    user=request.user
+    customer=user.customer_profile 
+    all_orders=Order.objects.filter(owner=customer).exclude(order_status=Order.CART_STAGE)# noqa: F841
+    context={'orders':all_orders } # noqa: F841
+    return render(request,'orders.html',context)
+
+
+@login_required(login_url='account') # type: ignore
 def add_to_cart(request):
     if request.POST:
         user=request.user
-        customer=user.customer_profile # noqa: F841
-        quantity=int(request.POST.get('quantity'))  # noqa: F841
-        product_id=request.POST.get('product_id')# noqa: F841
+        customer=user.customer_profile 
+        quantity=int(request.POST.get('quantity'))  
+        product_id=request.POST.get('product_id')
         size=request.POST.get('size') # noqa: F841
         cart_obj,created=Order.objects.get_or_create(
             owner=customer,
@@ -51,21 +82,4 @@ def add_to_cart(request):
             ordered_item.quantity=ordered_item.quantity+quantity
             ordered_item.save()
             
-    return redirect('orders:cart')
-
-
-def show_cart(request):
-    user=request.user
-    customer=user.customer_profile  # noqa: F841
-    cart_obj,created=Order.objects.get_or_create(
-        owner=customer,
-        order_status=Order.CART_STAGE
-    )
-    context={'cart':cart_obj}  # noqa: F841
-    return render(request,'cart.html',context)
-
-def remove_item_from_cart(request,pk):
-    item=OrderedItem.objects.get(pk=pk)  # noqa: F841
-    if item:
-        item.delete()
     return redirect('orders:cart')

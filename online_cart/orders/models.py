@@ -19,7 +19,7 @@ class Order(models.Model):
                    (ORDER_REJECTED,"ORDER_REJECTED")
                    )
     order_status=models.IntegerField(choices=STATUS_CHOICE,default=CART_STAGE)
-    
+    total_price=models.FloatField(default=0)
     owner=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,related_name='order')
     delete_status=models.IntegerField(choices=DELETE_CHOICE,default=LIVE)
     created_at=models.DateTimeField(auto_now_add=True)
@@ -30,7 +30,7 @@ class Order(models.Model):
     
 class OrderedItem(models.Model):
     product=models.ForeignKey(Product,related_name="added_cart",on_delete=models.SET_NULL,null=True)
-    quantity=models.IntegerField(default=1) 
+    quantity=models.IntegerField(default=0) 
     owner=models.ForeignKey(Order,on_delete=models.CASCADE,related_name='added_items')
     size = models.CharField(
         max_length=20,
